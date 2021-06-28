@@ -1,18 +1,16 @@
 package Tablero;
 
-import Casillas.Casilla;
-import Casillas.CasillaPierde;
-import Casillas.CasillaRetrocede;
-import Casillas.CasillaTirar;
+import Casillas.*;
 import Jugadores.Jugador;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Tablero {
 
     public static final Color AQUA = new Color(10,255,153);
     private Casilla[][] casillas;
-    private Jugador[] jugadores;
+    private ArrayList<Ficha> fichas;
     private int columnas;
     private int filas;
 
@@ -28,11 +26,10 @@ public class Tablero {
         for (int k = 0;k < casillas.length;k++){
             for (int i = 0;i < casillas[k].length;i++){
                 if (aqua){
-                    casillas[k][i] = new CasillaRetrocede(AQUA,25);
-                    ((CasillaRetrocede)casillas[k][i]).setRetroceso(25);
+                    casillas[k][i] = new CasillaRetrocede(AQUA,i);
                     aqua = false;
                 } else {
-                    casillas[k][i] = new CasillaTirar(Color.WHITE);
+                    casillas[k][i] = new CasillaAvanza(Color.WHITE,k);
                     aqua = true;
                 }
             }

@@ -10,20 +10,28 @@ public class CasillaAvanza extends Casilla{
     public CasillaAvanza(Color color, int avance) {
         super(color);
         this.avance = avance;
+        formarCasilla();
     }
 
     @Override
     public void formarCasilla(){
-        JLabel forma = new JLabel();
-        super.setForma(forma);
-        super.getForma().setPreferredSize(new Dimension(5,5));
-        super.getForma().setBackground(super.getColor());
-        super.getForma().setBorder(null);
+        super.removeAll();
+        super.setOpaque(true);
+        super.setPreferredSize(new Dimension(50, 50));
+        super.setBackground(super.getColor());
+        super.setBorder(null);
+        super.setToolTipText("Retrocedes " + this.avance + " casillas");
+        JLabel news = new JLabel(this.avance + "");
+        news.setText(this.avance + "");
+        news.setPreferredSize(new Dimension(50, 50));
+        news.setBounds(25, 12, 25, 25);
+        super.add(news, 1);
     }
 
     @Override
-    public void paintComponents(Graphics g) {
-        super.paintComponents(g);
-        g.fillRect(0,0,3,3);
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.setColor(Color.YELLOW);
+        g.fillRoundRect(15, 12, 25, 25, 5, 5);
     }
 }
