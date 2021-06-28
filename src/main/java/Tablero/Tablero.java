@@ -2,6 +2,8 @@ package Tablero;
 
 import Casillas.Casilla;
 import Casillas.CasillaPierde;
+import Casillas.CasillaRetrocede;
+import Casillas.CasillaTirar;
 import Jugadores.Jugador;
 
 import java.awt.*;
@@ -26,10 +28,11 @@ public class Tablero {
         for (int k = 0;k < casillas.length;k++){
             for (int i = 0;i < casillas[k].length;i++){
                 if (aqua){
-                    casillas[k][i] = new CasillaPierde(AQUA);
+                    casillas[k][i] = new CasillaRetrocede(AQUA,25);
+                    ((CasillaRetrocede)casillas[k][i]).setRetroceso(25);
                     aqua = false;
                 } else {
-                    casillas[k][i] = new Casilla(Color.WHITE);
+                    casillas[k][i] = new CasillaTirar(Color.WHITE);
                     aqua = true;
                 }
             }

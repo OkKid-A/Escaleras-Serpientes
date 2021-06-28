@@ -16,6 +16,11 @@ public class CasillaPierde extends Casilla{
         super.setBackground(super.getColor());
         super.setBorder(null);
         super.setToolTipText("Pierdes 1\nTurno");
+        /*JLabel news = new JLabel();
+        news.setText("Pierdes");
+        news.setPreferredSize(new Dimension(50,50));
+        news.setBounds(0,0,50,50);
+        super.add(news,1);*/
     }
 
     @Override
@@ -23,11 +28,5 @@ public class CasillaPierde extends Casilla{
         super.paintComponent(g);
         g.setColor(Color.RED);
         g.fillOval(12,12,25,25);
-        JLabel news = new JLabel();
-        news.setText("Pierdes");
-
-        news.setPreferredSize(new Dimension(50,50));
-        news.setBounds(0,0,50,50);
-        super.add(news,1);
     }
 }

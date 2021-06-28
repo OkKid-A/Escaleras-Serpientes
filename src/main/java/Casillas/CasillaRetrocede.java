@@ -14,19 +14,26 @@ public class CasillaRetrocede extends Casilla{
 
     @Override
     public void formarCasilla(){
-        JLabel forma = new JLabel();
-        super.setForma(forma);
-        super.getForma().setPreferredSize(new Dimension(5,5));
-        super.getForma().setBackground(super.getColor());
-        super.getForma().setBorder(null);
-        //super.setText("Retrocedes\n"+retroceso+ "casillas");
+        super.setOpaque(true);
+        super.setPreferredSize(new Dimension(50,50));
+        super.setBackground(super.getColor());
+        super.setBorder(null);
+        super.setToolTipText("Retrocedes "+this.retroceso+ " casillas");
+        JLabel news = new JLabel();
+        news.setText(this.retroceso+"");
+        news.setPreferredSize(new Dimension(50,50));
+        news.setBounds(25,12,25,25);
+        super.add(news,1);
     }
 
     @Override
-    public void paintComponents(Graphics g) {
-        super.paintComponents(g);
-        g.fillRoundRect(0,0,3,3,1,1);
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.setColor(Color.MAGENTA);
+        g.fillRoundRect(15, 12,25,25,5,5);
     }
 
-
+    public void setRetroceso(int retroceso) {
+        this.retroceso = retroceso;
+    }
 }

@@ -11,19 +11,19 @@ public class CasillaTirar extends Casilla{
 
     @Override
     public void formarCasilla(){
-        JLabel forma = new JLabel();
-        super.setForma(forma);
-        super.getForma().setPreferredSize(new Dimension(5,5));
-        super.getForma().setBackground(super.getColor());
-        super.getForma().setBorder(null);
+        super.setOpaque(true);
+        super.setPreferredSize(new Dimension(50,50));
+        super.setBackground(super.getColor());
+        super.setBorder(null);
+        super.setToolTipText("Vuelves a Tirar Los Dados");
         //super.setText("Ganas 1\nTurno");
 
     }
 
     @Override
-    public void paintComponents(Graphics g) {
-        super.paintComponents(g);
-        g.fillOval(0,0,3,3);
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
         g.setColor(Color.BLUE);
+        g.fillOval(12,12,30,30);
     }
 }
