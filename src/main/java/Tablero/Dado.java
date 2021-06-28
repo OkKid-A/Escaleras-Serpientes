@@ -15,7 +15,9 @@ public class Dado extends JButton {
         random = new Random();
         this.setMinimumSize(new Dimension(75,75));
         this.setPreferredSize(new Dimension(75,75));
+        this.setMaximumSize(new Dimension(75,75));
     }
+
 
     @Override
     protected void paintComponent(Graphics g) {

@@ -13,6 +13,7 @@ public class CasillaTirar extends Casilla{
     @Override
     public void formarCasilla(){
         super.setOpaque(true);
+        super.setMinimumSize(new Dimension(50,50));
         super.setPreferredSize(new Dimension(50,50));
         super.setBackground(super.getColor());
         super.setBorder(null);
