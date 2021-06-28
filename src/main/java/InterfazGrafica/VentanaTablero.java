@@ -1,7 +1,7 @@
 package InterfazGrafica;
 
 import Componentes.VistaTablero;
-import Tablero.Tablero;
+import Tablero.*;
 
 import javax.swing.*;
 
@@ -10,12 +10,14 @@ public class VentanaTablero extends JFrame implements Ventana{
     public static final String TITLE = "Serpientes & Escaleras";
     private JPanel tablerolVentanaPanel;
     private JPanel tableroPanel;
+    private JButton dadoButton;
     private Tablero tablero;
 
     public VentanaTablero(){
         tablero = new Tablero(10,10);
         fixComponents(this,tablerolVentanaPanel);
         tableroPanel = new VistaTablero("ruta",tablero);
+        tableroPanel.add(dadoButton);
         fixComponents(this,tableroPanel);
         tableroPanel.repaint();
     }
@@ -33,5 +35,6 @@ public class VentanaTablero extends JFrame implements Ventana{
     private void createUIComponents() {
         // TODO: place custom component creation code here
         tableroPanel = new VistaTablero("ruta",new Tablero(5,5));
+        dadoButton = new Dado();
     }
 }

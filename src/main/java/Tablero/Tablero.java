@@ -40,7 +40,7 @@ public class Tablero {
         }
     }
 
-    public void dibujarTableroSimple(){
+    public void pasarTurno(){
 
     }
 
