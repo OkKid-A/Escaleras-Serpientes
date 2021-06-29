@@ -1,6 +1,7 @@
 package InterfazGrafica;
 
 import Componentes.VistaTablero;
+import Jugadores.Jugador;
 import Tablero.*;
 
 import javax.swing.*;
@@ -30,6 +31,12 @@ public class VentanaTablero extends JFrame implements Ventana {
         fixComponents(this,tablerolVentanaPanel);
         tablerolVentanaPanel.repaint();
         setDadoListener();
+        dadoPanel.add(new Ficha(new Jugador("M"),1,Color.BLACK));
+        dadoPanel.add(new Ficha(new Jugador("M"),2,Color.BLACK));
+        dadoPanel.add(new Ficha(new Jugador("M"),3,Color.BLACK));
+        dadoPanel.add(new Ficha(new Jugador("M"),4,Color.BLACK));
+        dadoPanel.add(new Ficha(new Jugador("M"),5,Color.BLACK));
+        dadoPanel.add(new Ficha(new Jugador("M"),6,Color.BLACK));
     }
 
     @Override

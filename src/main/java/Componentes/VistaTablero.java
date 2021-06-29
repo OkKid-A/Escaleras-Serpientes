@@ -1,7 +1,8 @@
 package Componentes;
 
+import Casillas.Casilla;
 import ManejoDeArchivos.CargadorTablero;
-import Tablero.Tablero;
+import Tablero.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,6 +29,11 @@ public class VistaTablero extends JPanel {
     }
 
     public void dibujarTablero(){
+        for (int i = 0; i < 6;i++){
+            Ficha anadir = tablero.getFicha(i);
+            Casilla resp = (tablero.getCasilla(anadir.getFilas(),anadir.getColumna()));
+            resp.agregarFicha(anadir);
+        }
         for (int k = 0; k < tablero.getCasillas().length;k++){
             for (int i = 0; i < tablero.getCasillas()[k].length;i++){
                 limites.fill = GridBagConstraints.BELOW_BASELINE_TRAILING;

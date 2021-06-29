@@ -27,10 +27,10 @@ public class Tablero {
         for (int k = 0;k < casillas.length;k++){
             for (int i = 0;i < casillas[k].length;i++){
                 if (aqua){
-                    casillas[k][i] = new CasillaRetrocede(AQUA,i);
+                    casillas[k][i] = new Casilla(AQUA);
                     aqua = false;
                 } else {
-                    casillas[k][i] = new CasillaAvanza(Color.WHITE,k);
+                    casillas[k][i] = new Casilla(Color.WHITE);
                     aqua = true;
                 }
             }
@@ -45,17 +45,17 @@ public class Tablero {
         fichas = new ArrayList<Ficha>();
         for (int k =0;k < 6;k++){
             if (k == 0){
-                fichas.add(new Ficha(new Jugador("Juan"),k,Color.BLACK));
+                fichas.add(new Ficha(new Jugador("Juan"),1,Color.BLACK));
             } else if (k==1){
-                fichas.add(new Ficha(new Jugador("Mmm"),k,Color.green));
+                fichas.add(new Ficha(new Jugador("Mmm"),2,Color.green));
             } else if (k==2){
-                fichas.add(new Ficha(new Jugador("Miles"),k,Color.darkGray));
+                fichas.add(new Ficha(new Jugador("Miles"),3,Color.darkGray));
             } else if (k==3){
-                fichas.add(new Ficha(new Jugador("TwT"),k,Color.gray));
+                fichas.add(new Ficha(new Jugador("TwT"),4,Color.gray));
             }else if (k==4){
-                fichas.add(new Ficha(new Jugador("QwQ"),k,Color.orange));
+                fichas.add(new Ficha(new Jugador("QwQ"),5,Color.orange));
             } else if (k==5){
-                fichas.add(new Ficha(new Jugador("(*.*)b"),k,Color.PINK));
+                fichas.add(new Ficha(new Jugador("(*.*)b"),6,Color.PINK));
             }
         }
     }
