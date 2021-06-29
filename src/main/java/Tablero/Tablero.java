@@ -45,24 +45,21 @@ public class Tablero {
         fichas = new ArrayList<Ficha>();
         for (int k =0;k < 6;k++){
             if (k == 0){
-                fichas.add(new Ficha(new Jugador("Juan"),1,Color.BLACK));
+                fichas.add(new Ficha(filas-1,new Jugador("Juan"),1,Color.BLACK));
             } else if (k==1){
-                fichas.add(new Ficha(new Jugador("Mmm"),2,Color.green));
+                fichas.add(new Ficha(filas-1,new Jugador("Mmm"),2,Color.green));
             } else if (k==2){
-                fichas.add(new Ficha(new Jugador("Miles"),3,Color.darkGray));
+                fichas.add(new Ficha(filas-1,new Jugador("Miles"),3,Color.GRAY));
             } else if (k==3){
-                fichas.add(new Ficha(new Jugador("TwT"),4,Color.gray));
+                fichas.add(new Ficha(filas-1,new Jugador("TwT"),4,new Color(120,81,64)));
             }else if (k==4){
-                fichas.add(new Ficha(new Jugador("QwQ"),5,Color.orange));
+                fichas.add(new Ficha(filas-1,new Jugador("QwQ"),5,Color.orange));
             } else if (k==5){
-                fichas.add(new Ficha(new Jugador("(*.*)b"),6,Color.PINK));
+                fichas.add(new Ficha(filas-1,new Jugador("(*.*)b"),6,Color.PINK));
             }
         }
     }
 
-    public void pasarTurno(Ficha ficha){
-
-    }
 
     public Casilla getCasilla(int fila,int columna){
         return casillas[fila][columna];

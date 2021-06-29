@@ -1,5 +1,6 @@
 package Casillas;
 
+import Tablero.Core;
 import Tablero.Ficha;
 
 import javax.swing.*;
@@ -29,7 +30,6 @@ public class Casilla extends JLayeredPane {
         this.setPreferredSize(new Dimension(50, 50));
         this.setBackground(color);
         this.setBorder(null);
-        dibujarFichas();
         /*JLabel f = new JLabel();
         f.setText("MMM");
         f.setBackground(Color.blue);
@@ -41,6 +41,10 @@ public class Casilla extends JLayeredPane {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+        dibujarFichas(g);
+    }
+
+    public void dibujarFichas(Graphics g) {
         Graphics2D antiAlias = (Graphics2D) g;
         antiAlias.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         int anchoSobrante = punto.height * 2/3;
@@ -107,20 +111,14 @@ public class Casilla extends JLayeredPane {
                 g.setColor(fichas.get(5).getColor());
                 g.fillOval(derecha, medio, anchoSobrante, anchoSobrante);
                 break;
-        }
-    }
+        }}
 
-    public void dibujarFichas() {
-
-
-    }
-
-    public void aplicarCondiciones(Ficha ficha) {
-        agregarFicha(ficha);
+    public void aplicarCondiciones(Core core, Ficha ficha) {
     }
 
     public void agregarFicha(Ficha ficha) {
         fichas.add(ficha);
+
     }
 
     public void setFichas(ArrayList<Ficha> fichas) {

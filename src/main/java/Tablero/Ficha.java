@@ -19,13 +19,13 @@ public class Ficha extends JLabel {
     private int filas;
     private boolean gano;
 
-    public Ficha(Jugador jugador, int posicion,Color color){
+    public Ficha(int filaInicio,Jugador jugador, int posicion,Color color){
         super();
         this.posicion = posicion;
         this.color = color;
         this.jugador = jugador;
         columna = 0;
-        filas = 0;
+        filas = filaInicio;
         sentido = true;
         gano = false;
         this.setPreferredSize(punto);
@@ -108,5 +108,17 @@ public class Ficha extends JLabel {
 
     public Color getColor() {
         return color;
+    }
+
+    public void setFilas(int filas) {
+        this.filas = filas;
+    }
+
+    public void setColumna(int columna) {
+        this.columna = columna;
+    }
+
+    public void setSentido(boolean sentido) {
+        this.sentido = sentido;
     }
 }

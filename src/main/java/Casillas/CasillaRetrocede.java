@@ -1,5 +1,8 @@
 package Casillas;
 
+import Tablero.Core;
+import Tablero.Ficha;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -33,6 +36,12 @@ public class CasillaRetrocede extends Casilla {
         super.paintComponent(g);
         g.setColor(Color.MAGENTA);
         g.fillRoundRect(15, 12, 25, 25, 5, 5);
+        super.dibujarFichas(g);
+    }
+
+    @Override
+    public void aplicarCondiciones(Core core,Ficha ficha){
+        core.moverFicha(retroceso,ficha);
     }
 
     public void setRetroceso(int retroceso) {
