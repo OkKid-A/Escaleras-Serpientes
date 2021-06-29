@@ -5,6 +5,8 @@ import Tablero.*;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class VentanaTablero extends JFrame implements Ventana {
 
@@ -14,18 +16,20 @@ public class VentanaTablero extends JFrame implements Ventana {
     private JButton dadoButton;
     private JPanel dadoPanel;
     private JLabel mm;
-    private Tablero tablero= new Tablero(10,10);
+    private JButton button1;
+    private Tablero tablero;
+    private Core core;
 
     public VentanaTablero() {
-
         this.add(tableroPanel);
         this.pack();
         tableroPanel.repaint();
+        dadoButton = new Dado();
         dadoPanel.setLayout(new GridLayout());
-        dadoPanel.add(new Dado());
+        dadoPanel.add(dadoButton);
         fixComponents(this,tablerolVentanaPanel);
-        tableroPanel.setBounds(50,52,50,50);
         tablerolVentanaPanel.repaint();
+        setDadoListener();
     }
 
     @Override
@@ -38,9 +42,19 @@ public class VentanaTablero extends JFrame implements Ventana {
         frame.setLocationRelativeTo(null);
     }
 
+    public void setDadoListener(){
+        dadoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                core.ejecutarTurno(((Dado)dadoButton).tirar());
+            }
+        });
+    }
+
     private void createUIComponents() {
         // TODO: place custom component creation code here
         tablero = new Tablero(10,10);
         tableroPanel = new VistaTablero("ruta", tablero);
+        core = new Core(tablero,(Dado) dadoButton);
     }
 }

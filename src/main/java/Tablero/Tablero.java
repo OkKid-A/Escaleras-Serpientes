@@ -18,6 +18,7 @@ public class Tablero {
         this.columnas = columnas;
         this.filas = filas;
         casillas = new Casilla[filas][columnas];
+        crearFichas();
         generarTablero();
     }
 
@@ -40,7 +41,26 @@ public class Tablero {
         }
     }
 
-    public void pasarTurno(){
+    public void crearFichas(){
+        fichas = new ArrayList<Ficha>();
+        for (int k =0;k < 6;k++){
+            if (k == 0){
+                fichas.add(new Ficha(new Jugador("Juan"),k,Color.BLACK));
+            } else if (k==1){
+                fichas.add(new Ficha(new Jugador("Mmm"),k,Color.green));
+            } else if (k==2){
+                fichas.add(new Ficha(new Jugador("Miles"),k,Color.darkGray));
+            } else if (k==3){
+                fichas.add(new Ficha(new Jugador("TwT"),k,Color.gray));
+            }else if (k==4){
+                fichas.add(new Ficha(new Jugador("QwQ"),k,Color.orange));
+            } else if (k==5){
+                fichas.add(new Ficha(new Jugador("(*.*)b"),k,Color.PINK));
+            }
+        }
+    }
+
+    public void pasarTurno(Ficha ficha){
 
     }
 
@@ -54,5 +74,13 @@ public class Tablero {
 
     public Casilla[][] getCasillas() {
         return casillas;
+    }
+
+    public Ficha getFicha(int index){
+        return fichas.get(index);
+    }
+
+    public ArrayList<Ficha> getFichas() {
+        return fichas;
     }
 }
