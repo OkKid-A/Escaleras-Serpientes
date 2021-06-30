@@ -40,7 +40,9 @@ public class CasillaRetrocede extends Casilla {
     }
 
     @Override
-    public void aplicarCondiciones(Core core,Ficha ficha){
+    public void aplicarCondiciones(Core core, Ficha ficha, JPanel panel){
+        super.aplicarCondiciones(core,ficha,panel);
+        JOptionPane.showMessageDialog(panel,"Retrocedes "+retroceso+" casillas QwQ");
         core.moverFicha(0-retroceso,ficha);
     }
 

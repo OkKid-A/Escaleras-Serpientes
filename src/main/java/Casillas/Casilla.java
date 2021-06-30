@@ -113,7 +113,7 @@ public class Casilla extends JLayeredPane {
                 break;
         }}
 
-    public void aplicarCondiciones(Core core, Ficha ficha) {
+    public void aplicarCondiciones(Core core, Ficha ficha, JPanel panel) {
     }
 
     public void agregarFicha(Ficha ficha) {

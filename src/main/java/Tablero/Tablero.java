@@ -24,10 +24,10 @@ public class Tablero {
 
     public void generarTablero(){
         boolean aqua = true;
-        for (int k = 0;k < casillas.length;k++){
-            for (int i = 0;i < casillas[k].length;i++){
+        for (int k = 0;k < filas;k++){
+            for (int i = 0;i < columnas;i++){
                 if (aqua){
-                    casillas[k][i] = new CasillaRetrocede(AQUA,i);
+                    casillas[k][i] = new Casilla(AQUA);
                     aqua = false;
                 } else {
                     casillas[k][i] = new Casilla(Color.WHITE);

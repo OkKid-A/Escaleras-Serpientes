@@ -2,6 +2,7 @@ package Tablero;
 
 import Casillas.Casilla;
 
+import javax.swing.*;
 import java.awt.*;
 
 public class Core {
@@ -16,12 +17,13 @@ public class Core {
         numTurno = 0;
     }
 
-    public void ejecutarTurno(int tiroDado) {
+    public void ejecutarTurno(int tiroDado, JPanel panel) {
+        JOptionPane.showMessageDialog(panel,"Has obtenido un " + tiroDado+"!!!");
         Ficha enTurno = tablero.getFicha((numTurno%6));
-        if (enTurno.isPierdeTurno()) {
+        if (!enTurno.isPierdeTurno()) {
             moverFicha(tiroDado, enTurno);
             numTurno++;
-            tablero.getCasilla(enTurno.getFilas(),enTurno.getColumna()).aplicarCondiciones(this,enTurno);
+            tablero.getCasilla(enTurno.getFilas(),enTurno.getColumna()).aplicarCondiciones(this,enTurno,panel);
         }  else {
             enTurno.setPierdeTurno(false);
         }

@@ -23,7 +23,7 @@ public class CasillaAvanza extends Casilla{
         super.setPreferredSize(new Dimension(50, 50));
         super.setBackground(super.getColor());
         super.setBorder(null);
-        super.setToolTipText("Retrocedes " + this.avance + " casillas");
+        super.setToolTipText("Avanzas " + this.avance + " casillas");
         JLabel news = new JLabel(this.avance + "");
         news.setText(this.avance + "");
         news.setPreferredSize(new Dimension(50, 50));
@@ -40,8 +40,9 @@ public class CasillaAvanza extends Casilla{
     }
 
     @Override
-    public void aplicarCondiciones(Core core, Ficha ficha) {
-        super.aplicarCondiciones(core, ficha);
+    public void aplicarCondiciones(Core core, Ficha ficha, JPanel panel) {
+        super.aplicarCondiciones(core, ficha, panel);
+        JOptionPane.showMessageDialog(panel,"Avanzas " + avance + " casillas!");
         core.moverFicha(avance,ficha);
     }
 }

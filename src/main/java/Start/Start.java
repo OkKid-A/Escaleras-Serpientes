@@ -1,5 +1,6 @@
 package Start;
 
+import InterfazGrafica.VentanaMenuPrincipal;
 import InterfazGrafica.VentanaTablero;
 
 import javax.swing.*;
@@ -10,7 +11,7 @@ public class Start {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                VentanaTablero tablero = new VentanaTablero();
+                VentanaMenuPrincipal menu = new VentanaMenuPrincipal();
             }
         });
     }

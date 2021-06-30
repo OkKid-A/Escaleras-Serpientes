@@ -35,8 +35,9 @@ public class CasillaPierde extends Casilla{
     }
 
     @Override
-    public void aplicarCondiciones(Core core, Ficha ficha) {
-        super.aplicarCondiciones(core, ficha);
+    public void aplicarCondiciones(Core core, Ficha ficha, JPanel panel) {
+        super.aplicarCondiciones(core, ficha, panel);
+        JOptionPane.showMessageDialog(panel,"Pierdes el Siguiente Turno TwT.");
         ficha.setPierdeTurno(true);
     }
 }

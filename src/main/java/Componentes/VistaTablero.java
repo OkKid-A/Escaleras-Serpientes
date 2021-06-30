@@ -14,10 +14,11 @@ public class VistaTablero extends JPanel {
     private CargadorTablero loader;
     private GridBagConstraints limites;
 
-    public VistaTablero(String ruta, Tablero tablero){
+    public VistaTablero(String ruta){
         super();
         this.ruta = ruta;
-        this.tablero = tablero;
+        this.loader = new CargadorTablero(ruta);
+        this.tablero = loader.getTablero();
         initVista();
     }
 
@@ -44,5 +45,9 @@ public class VistaTablero extends JPanel {
                 this.add(tablero.getCasillas()[k][i],limites);
             }
         }
+    }
+
+    public Tablero getTablero() {
+        return tablero;
     }
 }
