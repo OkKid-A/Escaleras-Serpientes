@@ -18,8 +18,13 @@ public class Core {
 
     public void ejecutarTurno(int tiroDado) {
         Ficha enTurno = tablero.getFicha((numTurno%6));
-        moverFicha(tiroDado, enTurno);
-        numTurno++;
+        if (enTurno.isPierdeTurno()) {
+            moverFicha(tiroDado, enTurno);
+            numTurno++;
+            tablero.getCasilla(enTurno.getFilas(),enTurno.getColumna()).aplicarCondiciones(this,enTurno);
+        }  else {
+            enTurno.setPierdeTurno(false);
+        }
     }
 
     public Dimension moverFicha(int movimiento, Ficha ficha) {
@@ -48,4 +53,7 @@ public class Core {
         return new Dimension();
     }
 
+    public Dado getDado() {
+        return dado;
+    }
 }

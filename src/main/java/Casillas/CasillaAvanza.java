@@ -1,5 +1,8 @@
 package Casillas;
 
+import Tablero.Core;
+import Tablero.Ficha;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -33,5 +36,12 @@ public class CasillaAvanza extends Casilla{
         super.paintComponent(g);
         g.setColor(Color.YELLOW);
         g.fillRoundRect(15, 12, 25, 25, 5, 5);
+        super.dibujarFichas(g);
+    }
+
+    @Override
+    public void aplicarCondiciones(Core core, Ficha ficha) {
+        super.aplicarCondiciones(core, ficha);
+        core.moverFicha(avance,ficha);
     }
 }

@@ -27,7 +27,7 @@ public class Tablero {
         for (int k = 0;k < casillas.length;k++){
             for (int i = 0;i < casillas[k].length;i++){
                 if (aqua){
-                    casillas[k][i] = new Casilla(AQUA);
+                    casillas[k][i] = new CasillaRetrocede(AQUA,i);
                     aqua = false;
                 } else {
                     casillas[k][i] = new Casilla(Color.WHITE);

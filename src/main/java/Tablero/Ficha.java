@@ -121,4 +121,5 @@ public class Ficha extends JLabel {
     public void setSentido(boolean sentido) {
         this.sentido = sentido;
     }
+
 }

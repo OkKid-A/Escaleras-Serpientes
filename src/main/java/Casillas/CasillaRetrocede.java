@@ -41,7 +41,7 @@ public class CasillaRetrocede extends Casilla {
 
     @Override
     public void aplicarCondiciones(Core core,Ficha ficha){
-        core.moverFicha(retroceso,ficha);
+        core.moverFicha(0-retroceso,ficha);
     }
 
     public void setRetroceso(int retroceso) {

@@ -1,5 +1,8 @@
 package Casillas;
 
+import Tablero.Core;
+import Tablero.Ficha;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -28,5 +31,12 @@ public class CasillaPierde extends Casilla{
         super.paintComponent(g);
         g.setColor(Color.RED);
         g.fillOval(12,12,25,25);
+        super.dibujarFichas(g);
+    }
+
+    @Override
+    public void aplicarCondiciones(Core core, Ficha ficha) {
+        super.aplicarCondiciones(core, ficha);
+        ficha.setPierdeTurno(true);
     }
 }

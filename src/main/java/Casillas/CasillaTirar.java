@@ -1,5 +1,8 @@
 package Casillas;
 
+import Tablero.Core;
+import Tablero.Ficha;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -29,5 +32,12 @@ public class CasillaTirar extends Casilla{
         antiAlias.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g.setColor(Color.BLUE);
         g.fillOval(12,12,30,30);
+        super.dibujarFichas(g);
+    }
+
+    @Override
+    public void aplicarCondiciones(Core core, Ficha ficha) {
+        super.aplicarCondiciones(core, ficha);
+        core.ejecutarTurno(core.getDado().tirar());
     }
 }
