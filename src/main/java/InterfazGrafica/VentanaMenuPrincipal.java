@@ -43,15 +43,14 @@ public class VentanaMenuPrincipal extends JFrame implements Ventana{
         nuevaPartidaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                VentanaEligirJugadores eligirJugadores = new VentanaEligirJugadores();
-                /*JFileChooser chooser = new JFileChooser();
+                JFileChooser chooser = new JFileChooser();
                 chooser.showSaveDialog(null);
                 try {
                     VentanaTablero tablero = new VentanaTablero(chooser.getSelectedFile().getCanonicalPath());
                 } catch (IOException exception) {
                     exception.printStackTrace();
                 }
-                dispose();*/
+                dispose();
             }
         });;
     }
