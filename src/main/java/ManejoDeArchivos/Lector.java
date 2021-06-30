@@ -1,8 +1,6 @@
 package ManejoDeArchivos;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -26,5 +24,16 @@ public class Lector {
             e.printStackTrace();
         }
         return objetosLeidos;
+    }
+
+    public File[] recopilarArchivosEnDirectorio(String rutaDeDirectorio) {
+        File folder = new File(rutaDeDirectorio);
+        File[] archivosEnFolder = folder.listFiles(new FilenameFilter() {
+            @Override
+            public boolean accept(File dir, String name) {
+                return new File(dir, name).isFile();
+            }
+        });
+        return archivosEnFolder;
     }
 }
