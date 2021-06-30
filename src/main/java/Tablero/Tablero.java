@@ -80,4 +80,12 @@ public class Tablero {
     public ArrayList<Ficha> getFichas() {
         return fichas;
     }
+
+    public int getFilas() {
+        return filas;
+    }
+
+    public int getColumnas() {
+        return columnas;
+    }
 }

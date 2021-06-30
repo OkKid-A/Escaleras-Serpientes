@@ -25,7 +25,7 @@ public class VentanaTablero extends JFrame implements Ventana {
     public VentanaTablero(String ruta) {
         this.ruta = ruta;
         tableroPanel = new VistaTablero(ruta);
-        core = new Core(((VistaTablero)tableroPanel).getTablero(),(Dado) dadoButton);
+        core = new Core(((VistaTablero)tableroPanel).getTablero(),(Dado) dadoButton,ruta);
         this.add(tableroPanel);
         this.pack();
         tableroPanel.repaint();
@@ -51,10 +51,14 @@ public class VentanaTablero extends JFrame implements Ventana {
         dadoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                core.ejecutarTurno(((Dado)dadoButton).tirar(),tableroPanel);
+                core.ejecutarTurno(((Dado)dadoButton).tirar(),tableroPanel,redundar());
                 tableroPanel.repaint();
             }
         });
+    }
+
+    public JFrame redundar(){
+        return this;
     }
 
     private void createUIComponents() {

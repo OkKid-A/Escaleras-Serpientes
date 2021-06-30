@@ -13,4 +13,28 @@ public class Jugador implements Serializable {
         victorias = 0;
         derrotas = 0;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getVictorias() {
+        return victorias;
+    }
+
+    public int getDerrotas() {
+        return derrotas;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setVictorias(int victorias) {
+        this.victorias = victorias;
+    }
+
+    public void setDerrotas(int derrotas) {
+        this.derrotas = derrotas;
+    }
 }

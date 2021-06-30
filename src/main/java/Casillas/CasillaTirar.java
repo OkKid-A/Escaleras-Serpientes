@@ -36,9 +36,10 @@ public class CasillaTirar extends Casilla{
     }
 
     @Override
-    public void aplicarCondiciones(Core core, Ficha ficha,JPanel panel) {
-        super.aplicarCondiciones(core, ficha, panel);
+    public void aplicarCondiciones(Core core, Ficha ficha, JPanel panel, JFrame frame) {
+        super.aplicarCondiciones(core, ficha, panel, frame);
         JOptionPane.showMessageDialog(panel,"Puedes volver a tirar los dados!");
-        core.ejecutarTurno(core.getDado().tirar(),panel);
+        repaint();
+        core.ejecutarTurno(core.getDado().tirar(),panel,frame);
     }
 }

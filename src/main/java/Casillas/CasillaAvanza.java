@@ -40,9 +40,9 @@ public class CasillaAvanza extends Casilla{
     }
 
     @Override
-    public void aplicarCondiciones(Core core, Ficha ficha, JPanel panel) {
-        super.aplicarCondiciones(core, ficha, panel);
+    public void aplicarCondiciones(Core core, Ficha ficha, JPanel panel, JFrame frame) {
+        super.aplicarCondiciones(core, ficha, panel, frame);
         JOptionPane.showMessageDialog(panel,"Avanzas " + avance + " casillas!");
-        core.moverFicha(avance,ficha);
+        core.moverFicha(avance,ficha,frame);
     }
 }

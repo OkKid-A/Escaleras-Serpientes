@@ -17,6 +17,16 @@ public class VentanaMenuPrincipal extends JFrame implements Ventana{
     public VentanaMenuPrincipal() {
         fixComponents(this,ventanaMenuPanel);
         setNuevaPartidaListener();
+        setNuevoJugadorListener();
+    }
+
+    private void setNuevoJugadorListener(){
+        nuevoJugadorButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                VentanaNuevoJugador jugador = new VentanaNuevoJugador();
+            }
+        });
     }
 
     @Override
